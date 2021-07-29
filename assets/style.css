@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+@import "./utility.css";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  background-color: var(--bgColor1);
+  color: var(--heading);
+  height: 100vh;
+  overflow: hidden;
+}
+
+:root {
+  --bgColor1: hsl(233, 47%, 7%);
+  --cardBg: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+
+  --heading: hsl(0, 0%, 100%);
+  --mainPara: hsla(0, 0%, 100%, 0.75);
+  --statColor: hsla(0, 0%, 100%, 0.6);
+
+  --interFont: "Inter", sans-serif;
+  --decaFont: "Lexend Deca", sans-serif;
+}
+
+.container {
+  height: 100vh;
+}
+
+main {
+  background-color: var(--cardBg);
+  padding: 5em 5em 4em 5em;
+}
+
+main .content h1 {
+  font-family: var(--interFont);
+  line-height: 45px;
+  padding-bottom: 2rem;
+}
+
+main .stats ul {
+  list-style: none;
+  justify-content: space-between;
+  width: 93%;
+}
+
+main .stats ul li {
+  line-height: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: var(--decaFont);
+  font-size: 21px;
+}
+
+main .stats ul span {
+  color: var(--statColor);
+  font-size: 13px;
+  font-weight: 300;
+}
+
+main .content p {
+  line-height: 1.5rem;
+  margin-bottom: 3rem;
+  color: var(--mainPara);
+  font-family: var(--decaFont);
+}
+
+main .content span {
+  color: var(--accent);
+}
+
+.card {
+  width: 65rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  perspective: 1px;
+}
+
+figure {
+  background-color: var(--accent);
+}
+
+figure img {
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 0.7;
+}
+
+.mobile {
+  display: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer .attribution {
+  font-size: 14px;
+  word-spacing: 5px;
+  color: var(--mainPara);
+  text-transform: uppercase;
+}
+
+footer .attribution a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: bolder;
+  transition: all 1s ease;
+}
+footer .attribution a:visited {
+  color: var(--accent);
+}
+
+footer .attribution a:hover {
+  color: var(--heading);
+}
+
+/* Media Queries */
+
+@media all and (max-width: 1100px) {
+  body {
+    margin: 5rem 0;
+  }
+  .card {
+    flex-direction: column-reverse;
+    width: 30rem;
+    margin-bottom: 10rem;
+  }
+  figure img {
+    height: 44.5vh;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 490px) {
+  body {
+    margin: 4.7em 2.1em;
+  }
+
+  .mobile {
+    display: block;
+    width: 100%;
+  }
+
+  main {
+    padding: 2.8em 0em 0em 0.5em;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  figure img {
+    height: 20.5vh;
+    width: 100%;
+  }
+
+  .card {
+    width: 25rem;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+
+  main .content h1 {
+    font-size: 21px;
+    margin-top: -30px;
+    line-height: 28px;
+    text-align: center;
+    margin-left: -1rem;
+  }
+
+  main .content p {
+    margin-bottom: 2rem;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  main .stats ul li {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  footer {
+    overflow: hidden;
+    left: 2px;
+    bottom: 10px;
+  }
+}
